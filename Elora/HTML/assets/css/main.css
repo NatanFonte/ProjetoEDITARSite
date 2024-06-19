@@ -197,6 +197,7 @@ header .navbar a{
 header .navbar a:hover,
 header .navbar a.active{
     color: var(--purple);
+    text-decoration: underline;
 }
 
 header #menu-btn{
@@ -255,8 +256,8 @@ header #menu-btn:hover{
 }
 
 .home .image img{
-    height: 40rem;
-    width: 40rem;
+    height: 70rem;
+    width: 70rem;
     border-radius: 50% 50% 50% 50% / 30% 30% 70% 70% ;
     object-fit:cover;
 }
@@ -329,9 +330,10 @@ header #menu-btn:hover{
     text-align: center;
 }
 
-.about .image img{
+.about .image img {
     width: 100%;
-    border: 1rem solid var(--purple);
+    border: 1rem solid #ebb83d;
+    border-radius: 100% 100% 100% 100%
 }
 
 .about .content{
@@ -413,7 +415,7 @@ header #menu-btn:hover{
     -ms-flex: 1 1 18rem;
         flex: 1 1 18rem;
     text-align: center;
-    background-color: #222;
+    background-color: #571860;
     padding: 2rem;
 }
 
@@ -475,31 +477,31 @@ header #menu-btn:hover{
  .skill-item .box .progress-bar span{
     display:block;
     height:100%;
-    background: var(--purple);
+    background: #ebb83d;
 }
 
  .skill-item.item1 .box:nth-child(1) .progress-bar span{
-    width:95%;
+    width:15%;
 }
 
  .skill-item.item1 .box:nth-child(2) .progress-bar span{
-    width:90%;
+    width:92%;
 }
 
  .skill-item.item1 .box:nth-child(3) .progress-bar span{
-    width:85%;
+    width:20%;
 }
 
 .skill-item.item2 .box:nth-child(1) .progress-bar span{
-    width:75%;
+    width:30%;
 }
 
  .skill-item.item2 .box:nth-child(2) .progress-bar span{
-    width:65%;
+    width:80%;
 }
 
  .skill-item.item2 .box:nth-child(3) .progress-bar span{
-    width:60%;
+    width: 90%;
 }
 
 /*--------------------- 5- About Area CSS (End) ---------------------*/
@@ -534,7 +536,7 @@ header #menu-btn:hover{
     -ms-flex: 1 1 40rem;
         flex: 1 1 40rem;
     padding: 0 3rem 2rem 3rem;
-    border-left: 0.2rem solid var(--purple);
+    border-left: 0.2rem solid #eeb835;
     margin-left: 2rem;
 }
 
@@ -549,7 +551,7 @@ header #menu-btn:hover{
     text-align: center;
     font-size: 2rem;
     color:var(--white);
-    background:var(--purple);
+    background:#eeb835;
 }
 
 .experience-item .content{
@@ -559,7 +561,7 @@ header #menu-btn:hover{
 }
 
 .experience-item span{
-    background: #222;
+    background: #eeb835;
     color: var(--white);
     padding: 0.5rem 1.5rem;
     font-size: 1.8rem;
@@ -618,24 +620,24 @@ header #menu-btn:hover{
 }
 
 .service-item i{
-    color: var(--white);
+    color: #eeb835;
     font-size: 4rem;
 }
 
 .service-item h3{
     font-size: 2rem;
-    color: var(--white);
+    color: #f5f5dc;
     padding: 1.5rem 0;
 }
 
 .service-item p{
     font-size: 1.6rem;
-    color: var(--grey);
+    color: #f5f5dc;
     line-height: 1.6;
 }
 
 .service-item:hover p{
-    color: var(--white);
+    color: #f5f5dc;
 }
 
 /*--------------------- 7- Services Area CSS (End) ---------------------*/
