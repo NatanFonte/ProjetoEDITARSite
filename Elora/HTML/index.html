@@ -23,6 +23,59 @@
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
+    <style>
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #00C5DC;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            padding: 8px;
+            border-radius: 3%;
+            right: 0;
+            /* Alinha o submenu à direita */
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 7px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            margin: 5px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #00C5DC;
+            color: #00C5DC;
+            /* Muda a cor da letra para azul ao passar o mouse */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 18px;
+            /* Adiciona padding */
+            text-decoration: none;
+            display: flex;
+            margin: 1px;
+            /* Adiciona a margem */
+            border-radius: 3%;
+
+        }
+
+        .dropdown-content a:hover {
+            color: #05102E;
+            background-color: #ddd;
+            border: #05102E solid 2px;
+            border-radius: 3%;
+
+        }
+    </style>
 </head>
 
 <body>
@@ -47,45 +100,76 @@
         <!-- Logo End -->
 
         <!-- Navbar -->
+
         <nav class="navbar" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
             <span style="display: flex; align-items: center; margin-right: 20px;">
-                <i class="fas fa-home fa-lg" aria-hidden="true" style="color: white;"></i>
+                <i class="fas fa-home fa-lg" aria-hidden="true" style="color:white ;"></i>
                 <a href="#home" style="margin-left: 10px;">Inicio</a>
             </span>
 
             <span style="display: flex; align-items: center; margin-right: 20px;">
-                <i class="fas fa-info-circle fa-lg" aria-hidden="true" style="color: white;"></i>
+                <i class="fas fa-info-circle fa-lg" aria-hidden="true" style="color:white ;"></i>
                 <a href="#about" style="margin-left: 10px;">sobre</a>
             </span>
 
             <span style="display: flex; align-items: center; margin-right: 20px;">
-                <i class="fas fa-gavel fa-lg" aria-hidden="true" style="color: white;"></i>
+                <i class="fas fa-gavel fa-lg" aria-hidden="true" style="color:white ;"></i>
                 <a href="#service" style="margin-left: 10px;">Serviço</a>
             </span>
 
             <span style="display: flex; align-items: center; margin-right: 20px;">
-                <i class="fas fa-window-restore fa-lg" aria-hidden="true" style="color: white;"></i>
+                <i class="fas fa-window-restore fa-lg" aria-hidden="true" style="color:white ;"></i>
                 <a href="#portfolio" style="margin-left: 10px;">Portfolio</a>
             </span>
 
             <span style="display: flex; align-items: center; margin-right: 20px;">
-                <i class="fa fa-users fa-lg" aria-hidden="true" style="color: white;"></i>
+                <i class="fa fa-users fa-lg" aria-hidden="true" style="color:white ;"></i>
                 <a href="#testimonial" style="margin-left: 10px;">Depoimento</a>
             </span>
 
             <span style="display: flex; align-items: center; margin-right: 20px;">
-                <i class="fa fa-file fa-lg" aria-hidden="true" style="color: white;"></i>
+                <i class="fa fa-file fa-lg" aria-hidden="true" style="color:white ;"></i>
                 <a href="#blog" style="margin-left: 10px;">Noticias</a>
             </span>
 
             <span style="display: flex; align-items: center; margin-right: 20px;">
-                <i class="fa fa-phone-square fa-lg" aria-hidden="true" style="color: white;"></i>
+                <i class="fa fa-phone-square fa-lg" aria-hidden="true" style="color:white ;"></i>
                 <a href="#contact" style="margin-left: 10px;">Contato</a>
             </span>
-            <span style="display: flex; align-items: center; margin-right: 20px;">
-                <i class="fa fa-user" aria-hidden="true" style="color: white;"></i>
-                <a href="Login.html" style="margin-left: 10px;">Login</a>
-            </span>
+            <div class="dropdown" style="position: relative; display: inline-block;">
+                <span style="display: flex; align-items: center; margin-right: 20px;">
+                    <i class="fa fa-user" aria-hidden="true" style="color: white;"></i>
+                    <a href="Login.html" style="margin-left: 10px;">Login</a>
+                </span>
+                <div class="dropdown-content"
+                    style="display: none; position: absolute; background-color: #f9f9f9; width: 200px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1; padding: 8px; border-radius: 3%;">
+                    <a href="UsuarioIndex.html"
+                        style="color: black; padding: 7px; text-decoration: none; display: flex; align-items: center; margin: 5px;">
+                        <i class="fa fa-users" aria-hidden="true" style="margin-right: 8px;"></i>
+                        Usuarios
+                    </a>
+                    <a href="AgendamentoIndex.html"
+                        style="color: black; padding: 7px; text-decoration: none; display: flex; align-items: center; margin: 5px; ">
+                        <i class="fa fa-calendar" aria-hidden="true" style="margin-right: 8px;"></i>
+                        Agendamento Admin
+                    </a>
+                    <a href="UsuarioIndex.html"
+                        style="color: black; padding: 7px; text-decoration: none; display: flex; align-items: center; margin: 5px;">
+                        <i class="fa fa-calendar" aria-hidden="true" style="margin-right: 8px;"></i>
+                        Agendamento User
+                    </a>
+                    <a href="Cadastro.html"
+                        style="color: black; padding: 7px; text-decoration: none; display: flex; align-items: center; margin: 5px;">
+                        <i class="fa fa-id-card" aria-hidden="true" style="margin-right: 8px" ;></i>
+                        Cadastro/Login
+                    </a>
+                    <a href="#logout"
+                        style="color: black; padding: 7px; text-decoration: none; display: flex; align-items: center; margin: 5px;">
+                        <i class="fa fa-file" aria-hidden="true" style="margin-right: 8px"></i>
+                        Relatório
+                    </a>
+                </div>
+            </div>
         </nav>
         <!-- Menubar -->
         <div class="fas fa-bars" id="menu-btn"></div>
@@ -574,8 +658,10 @@
                     <i class="fas fa-quote-left"></i>
 
                     <p class="comment">
-                        A publicidade em realidade aumentada (AR) combina elementos virtuais com o mundo real. Anúncios AR podem aparecer em revistas, outdoors ou até mesmo em aplicativos móveis.
-                         Eles envolvem os usuários de maneira criativa, proporcionando uma experiência memorável e impactante, e eu devo agradecer pela experiência
+                        A publicidade em realidade aumentada (AR) combina elementos virtuais com o mundo real. Anúncios
+                        AR podem aparecer em revistas, outdoors ou até mesmo em aplicativos móveis.
+                        Eles envolvem os usuários de maneira criativa, proporcionando uma experiência memorável e
+                        impactante, e eu devo agradecer pela experiência
                     </p>
 
                     <div class="intro">
@@ -670,9 +756,11 @@
                             <h5><i class="fas fa-calendar-alt"></i><span>7 junho, 2024</span></h5>
                             <h5><i class="fas fa-user"></i><span>by O GLOBO</span></h5>
                         </div>
-                        <a class="main-heading" href="#">Shows e realidade virtual no Rio2C, festa para Museu Nacional e outros eventos do fim de semana</a>
-                        <p>De encontro que apresenta as novidades do universo dos games e da mídia aos 206 anos do Museu Nacional, 
-                            confira opções da programação 
+                        <a class="main-heading" href="#">Shows e realidade virtual no Rio2C, festa para Museu Nacional e
+                            outros eventos do fim de semana</a>
+                        <p>De encontro que apresenta as novidades do universo dos games e da mídia aos 206 anos do Museu
+                            Nacional,
+                            confira opções da programação
                         </p>
                         <a href="#" class="btn">read more <i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -687,10 +775,13 @@
                             <h5><i class="fas fa-calendar-alt"></i><span>12 junho, 2024</span></h5>
                             <h5><i class="fas fa-user"></i><span>by E-commerce Brasil</span></h5>
                         </div>
-                        <a class="main-heading" href="#">Ferramentas alimentadas por inteligência artificial ganham cada vez mais espaço no e-commerce brasileiro</a>
-                        <p>A evolução do e-commerce no Brasil promete crescer mais. Uma projeção da ABComm indica que o faturamento das lojas virtuais
+                        <a class="main-heading" href="#">Ferramentas alimentadas por inteligência artificial ganham cada
+                            vez mais espaço no e-commerce brasileiro</a>
+                        <p>A evolução do e-commerce no Brasil promete crescer mais. Uma projeção da ABComm indica que o
+                            faturamento das lojas virtuais
                         </p>
-                        <a href="https://www.ecommercebrasil.com.br/noticias/ferramentas-inteligencia-artificial-ganham-espaco-no-e-commerce-brasileiro" class="btn">Saiba Mais <i class="fas fa-arrow-right"></i></a>
+                        <a href="https://www.ecommercebrasil.com.br/noticias/ferramentas-inteligencia-artificial-ganham-espaco-no-e-commerce-brasileiro"
+                            class="btn">Saiba Mais <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -703,10 +794,13 @@
                             <h5><i class="fas fa-calendar-alt"></i><span>26 maio, 2024</span></h5>
                             <h5><i class="fas fa-user"></i><span>by Rogério Tobias</span></h5>
                         </div>
-                        <a class="main-heading" href="#">Outdoors 3D e realidade aumentada: A fronteira da publicidade</a>
-                        <p>Estamos vivendo um novo horizonte da comunicação visual. É importante percebermos como a tecnologia e inovação
+                        <a class="main-heading" href="#">Outdoors 3D e realidade aumentada: A fronteira da
+                            publicidade</a>
+                        <p>Estamos vivendo um novo horizonte da comunicação visual. É importante percebermos como a
+                            tecnologia e inovação
                         </p>
-                        <a href="https://www.em.com.br/colunistas/rogerio-tobias/2024/05/6863949-outdoors-3d-e-realidade-aumentada-a-fronteira-da-publicidade.html" class="btn">Saiba Mais<i class="fas fa-arrow-right"></i></a>
+                        <a href="https://www.em.com.br/colunistas/rogerio-tobias/2024/05/6863949-outdoors-3d-e-realidade-aumentada-a-fronteira-da-publicidade.html"
+                            class="btn">Saiba Mais<i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -865,7 +959,16 @@
             e.preventDefault();
         });
     </script>
+    <script>
+        // Script to handle the dropdown functionality
+        document.querySelector('.dropdown').addEventListener('mouseover', function () {
+            this.querySelector('.dropdown-content').style.display = 'block';
+        });
 
+        document.querySelector('.dropdown').addEventListener('mouseout', function () {
+            this.querySelector('.dropdown-content').style.display = 'none';
+        });
+    </script>
 </body>
 
 </html>
