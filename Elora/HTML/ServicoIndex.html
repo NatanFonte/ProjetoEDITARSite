@@ -24,7 +24,7 @@
         <div class="container page-maneger"  style="background-color: white">
 
             <div class="add-user-button">
-                <h1 class="section-title cliente-title-maneger">Gerenciamento de Produtos</h1>
+                <h1 class="section-title cliente-title-maneger">Gerenciamento de Serviços</h1>
                 <br />
             </div>
 
@@ -32,15 +32,15 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="input-group mb-4">
-                            <input id="filtro" type="text" class="form-control" placeholder="Pesquisar Produtos..."
+                            <input id="filtro" type="text" class="form-control" placeholder="Pesquisar Serviços..."
                                 aria-label="Filtrar" aria-describedby="basic-addon2">
                         </div>
                     </div>
                     <div class="col-md-6 text-md-end">
                         <!-- Alteração para "text-md-end" para alinhar à direita apenas em telas médias e maiores -->
                         <button class="btn btn-success btn-lg" onclick="" data-bs-toggle="modal"
-                            data-bs-target="#InserirUsuario">
-                            <i class="fa fa-plus"></i> Adicionar Produto
+                            data-bs-target="#InserirServico">
+                            <i class="fa fa-plus"></i> Adicionar Serviço
                         </button>
                     </div>
                 </div>
@@ -53,8 +53,8 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th>Nome</th>
-                            <th>Senha</th>
+                            <th>Serviços</th>
+                            <th>Valor dos Serviços</th>
                             <th class="editar">Editar</th>
                             <th class="excluir">Excluir</th>
                         </tr>
@@ -62,19 +62,19 @@
                     <tbody>
 
                         <tr id="@item.Id">
-                            <td>Produto</td>
+                            <td>Serviço</td>
                             <td>Valor</td>
-                            <td class="text-center">
+                            <td>
                                 <button class="btn btn-default"
-                                    onclick="definirEdt('Produto','Valor')"
-                                    data-bs-toggle="modal" data-bs-target="#EditarUsuario">
+                                    onclick="definirEdt('Serviço','Valor')"
+                                    data-bs-toggle="modal" data-bs-target="#EditarServico">
                                     <i class="fa fa-edit"></i>
                                 </button>
                             </td>
-                            <td class="text-center">
+                            <td>
                                 <button class="btn btn-default"
-                                    onclick="definirExc('Produto', 'Valor')"
-                                    data-bs-toggle="modal" data-bs-target="#ExcluirUsuario">
+                                    onclick="definirExc('Serviço', 'Valor')"
+                                    data-bs-toggle="modal" data-bs-target="#ExcluirServico">
                                     <i class="fa fa-trash text-danger"></i>
                                 </button>
                             </td>
@@ -86,34 +86,27 @@
 
         </div>
 
-        <div class="modal fade" id="EditarUsuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+        <div class="modal fade" id="EditarServico" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
             <div class="modal-dialog">
                 <div class="modal-content" >
                     <div class="modal-header" style="background-color: #05102e; color: white; border-color: #eea236;">
-                        <h1 class="modal-title" id="exampleModalLabel">Editar Produto</h1>
+                        <h1 class="modal-title" id="exampleModalLabel">Editar Serviço</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
                     <div class="modal-body">
                         <form>
-                            <p style="color:red">Campos com * vermelho são obrigatórios</p>
                             <div class="mb-3 row">
                                 <div class="col-md-6">
-                                    <input id="EditNome" type="text" class="form-control"
-                                        placeholder="Digite o novo Produto">
-                                </div>
-                                <div class="col-md-6">
-                                    <label style="color:red">*</label>
+                                    <input id="EditServiço" type="text" class="form-control"
+                                        placeholder="Digite um Serviço">
                                 </div>
                             </div>
 
                             <div class="mb-3 row">
                                 <div class="col-md-7">
-                                    <input id="EditEmail" type="email" class="form-control"
-                                        placeholder="Digite o email">
-                                </div>
-                                <div class="col-md-5">
-                                    <label style="color:red">*</label>
+                                    <input id="EditValor" type="number" class="form-control"
+                                        placeholder="Digite o valor do Serviço">
                                 </div>
                             </div>
 
@@ -123,47 +116,35 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary" onclick=" AlterarUsuario()">Salvar</button>
+                        <button type="button" class="btn btn-primary" onclick=" AlterarServico()">Salvar</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="modal fade" id="ExcluirUsuario" tabindex="-1" aria-labelledby="exampleModalLabel"
+        <div class="modal fade" id="ExcluirServico" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header" style="background-color: #05102e; color: white; border-color: #eea236;">
-                        <h1 class="modal-title" id="exampleModalLabel">Excluir Cliente</h1>
+                        <h1 class="modal-title" id="exampleModalLabel">Excluir Serviço</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form>
                             <div class="mb-3">
                                 <label for="nome">Nome</label>
-                                <input type="text" id="ExcNome" class="form-control" placeholder="Digite seu nome..."
+                                <input type="text" id="ExcNome" class="form-control" placeholder="Digite o Serviço..."
                                     readonly>
-
                             </div>
-                            <div class="mb-3">
-                                <label for="email">Email</label>
-                                <input type="email" id="ExcEmail" class="form-control" placeholder="Digite seu email..."
-                                    readonly>
 
-                            </div>
-                            <div class="mb-3">
-                                <label for="telefone">Telefone</label>
-                                <input type="text" id="ExcTel" class="form-control" placeholder="Digite seu telefone..."
-                                    readonly>
-
-                            </div>
                             <input type="hidden" id="IdExc" class="form-control" placeholder="Digite seu nome..."
                                 readonly>
 
                         </form>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                            <button type="button" onclick="ExcluirUsuario()" class="btn btn-primary">Excluir</button>
+                            <button type="button" onclick="ExcluirServico()" class="btn btn-primary">Excluir</button>
                         </div>
 
                     </div>
@@ -172,56 +153,28 @@
             </div>
         </div>
 
-        <div class="modal fade" id="InserirUsuario" tabindex="-1" aria-labelledby="exampleModalLabel"
+        <div class="modal fade" id="InserirServico" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
 
                     <div class="modal-header" style="background-color: #05102e; color: white; border-color: #eea236;">
-                        <h1 class="modal-title" id="exampleModalLabel">Adicionar Cliente</h1>
+                        <h1 class="modal-title" id="exampleModalLabel">Adicionar Serviço</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
                     <div class="modal-body">
                         <form>
-                            <p style="color:red">Campos com * vermelho são obrigatórios</p>
                             <div class="mb-3 row">
                                 <div class="col-md-6">
-                                    <input id="Nome" type="text" class="form-control"
-                                        placeholder="Digite o nome do cliente">
-                                </div>
-                                <div class="col-md-6">
-                                    <label style="color:red">*</label>
+                                    <input id="Serviço" type="text" class="form-control"
+                                        placeholder="Digite o nome do Serviço">
                                 </div>
                             </div>
 
                             <div class="mb-3 row">
                                 <div class="col-md-6">
-                                    <input id="Senha" type="text" class="form-control" placeholder="Digite o a senha">
-                                </div>
-                                <div class="col-md-6">
-                                    <label style="color:red">*</label>
-                                </div>
-                            </div>
-
-                            <div class="mb-3 row">
-                                <div class="col-md-7">
-                                    <input id="Email" type="email" class="form-control" placeholder="Digite o email">
-                                </div>
-                                <div class="col-md-5">
-                                    <label style="color:red">*</label>
-                                </div>
-                            </div>
-
-                           
-
-                            <div class="mb-3 row">
-                                <div class="col-md-6">
-                                    <input id="Telefone" type="text" class="form-control"
-                                        placeholder="Digite o telefone">
-                                </div>
-                                <div class="col-md-6">
-                                    <label style="color:red">*</label>
+                                    <input id="Valor" type="number" class="form-control" placeholder="Digite o Valor">
                                 </div>
                             </div>
 
@@ -231,7 +184,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary" onclick="InserirUsuario()">Adicionar</button>
+                        <button type="button" class="btn btn-primary" onclick="InserirServico()">Adicionar</button>
                         <!--onclick para chamar a funcao de alteração-->
                     </div>
                 </div>
@@ -248,83 +201,38 @@
         <script src="assets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <script>
 
-            function definirEdt(id, Nome, Email, Senha, TipoUsuario, Telefone) {
+            function definirEdt(Serviço, Valor) {
 
-                $('#IdEdt').val(id);
-                $('#EditNome').val(Nome);
-                $('#EditSenha').val(Senha);
-                $('#EditEmail').val(Email);
-                $('#EditTel').val(Telefone);
+                $('#EditServiço').val(Servico));
+                $('#EditValor').val(Valor);
 
-
-                var senhaValue = "";
-                if (Senha) {
-                    $('#EditSenha').val(Senha);
-                    senhaValue = Senha;
+                var valorValue = "";
+                if (Valor) {
+                    $('#EditValor').val(Valor);
+                    valorValue = Valor;
                 }
 
 
-                if ($('#DropTipoUsuarioEdit').length > 0) {
-                    $('#DropTipoUsuarioEdit option').filter(function () {
-                        return $(this).val() === TipoUsuario;
+                if ($('#DropTipoServiçoEdit').length > 0) {
+                    $('#DropTipoServiçoEdit option').filter(function () {
+                        return $(this).val() === TipoServico;
                     }).prop('selected', true);
-                    $('#DropTipoUsuarioEdit').trigger('chosen:updated');
-                } else {
-                    console.error("DropDownList não encontrado.");
                 }
-            }
 
-            function definirExc(id, Nome, Email, Telefone) {
-                $('#IdExc').val(id);
-                $('#ExcNome').val(Nome);
-                $('#ExcEmail').val(Email);
-                $('#ExcTel').val(Telefone)
-            }
-
-            function InserirUsuario() {
-
-                var nome = $('#Nome').val();
-                var email = $('#Email').val();
-                var senha = $('#Senha').val();
-                var telefone = $('#Telefone').val();
-                var tipoUsuario = $('#DropTipoUsuario option:selected').val();
-
-                if (nome.trim() === "") {
-                    alert("Por favor, preencha o campo Nome.");
+                if (tipoServico === "Escolha o Tipo de Serviço") {
+                    alert("Por favor, selecione o tipo de serviço");
                     return;
                 }
-                if (senha.trim() === "") {
-                    alert("Por favor, preencha o campo Senha.");
-                    return;
-                }
-                if (email.trim() === "") {
-                    alert("Por favor, insira um email válido.");
-                    return;
-                }
-
-                if (tipoUsuario === "Escolha o Tipo de Usuário") {
-                    alert("Por favor, selecione o tipo de usuário.");
-                    return;
-                }
-
-                if (telefone.trim() === "") {
-                    alert("Por favor, insira um número de telefone válido.");
-                    return;
-                }
-
-
 
                 var dados = {
-                    Nome: nome,
-                    Email: email,
-                    Senha: senha,
-                    Telefone: telefone,
-                    TipoUsuario: tipoUsuario
+                    Servico: servico,
+                    Valor: valor,
+                    TipoServico: tipoServico
                 };
 
                 // Faça a chamada AJAX
                 $.ajax({
-                    url: '/Usuario/InserirUsuario',
+                    url: '/Servico/InserirServico',
                     type: "POST",
                     dataType: "json",
                     data: dados,
@@ -332,7 +240,7 @@
                         if (resultado.success) {
                             alert(resultado.message);  // Exibe a mensagem de sucesso
                             // Fecha o modal
-                            $('#InserirUsuario').modal('hide');
+                            $('#InserirServico').modal('hide');
                             // Recarrega a págInserirUsuarioina
                             location.reload();
                         } else {
@@ -345,64 +253,16 @@
                 });
             }
 
-            function AlterarUsuario() {
-                var id = $("#IdEdt").val();
-                var nome = $("#EditNome").val();
-                var senha = $("#EditSenha").val();
-                var email = $("#EditEmail").val();
-                var tel = $('#EditTel').val();
-                var tipoCli = $('#DropTipoUsuarioEdit').val(); // Obtém o valor do tipo de cliente, não apenas o texto
-
-                // Validação do campo 'Nome'
-                if (!nome) {
-                    alert("Por favor, preencha o campo Nome.");
-                    return;
-                }
-
-                // Validação do campo 'Senha'
-                if (!senha) {
-                    alert("Por favor, preencha o campo Senha.");
-                    return;
-                }
-
-                // Validação do campo 'Email'
-                if (!email) {
-                    alert("Por favor, preencha o campo Email.");
-                    return;
-                }
-
-                // Validação do campo 'Telefone'
-                if (!tel) {
-                    alert("Por favor, preencha o campo Telefone.");
-                    return;
-                }
-
-                // Validação do campo 'Tipo de Cliente'
-                if (!tipoCli) {
-                    alert("Por favor, selecione o Tipo de Cliente.");
-                    return;
-                }
-
-                // Crie um objeto com os dados
-                var dados = {
-                    Id: id,
-                    Nome: nome,
-                    Senha: senha,
-                    Email: email,
-                    Telefone: tel,
-                    TipoUsuario: tipoCli
-                };
-
                 // Faça a chamada AJAX para o servidor
                 $.ajax({
                     type: "POST",
-                    url: "/Usuario/AlterarUsuario",
+                    url: "/Servico/AlterarServico",
                     contentType: "application/json; charset=utf-8",
                     data: JSON.stringify(dados),
                     success: function (response) {
                         // Manipule a resposta do servidor
                         if (response.success) {
-                            alert("Cliente alterado com sucesso!");
+                            alert("Serviço alterado com sucesso");
                             // Feche o modal de edição se necessário
                             $('#FormEditar').modal('hide');
                             // Recarregue a página se necessário
@@ -418,27 +278,27 @@
                 });
             }
 
-            function ExcluirUsuario() {
+            function ExcluirServico() {
                 // Obtenha o ID do usuário a ser excluído
                 var userId = $('#IdExc').val();
 
                 // Faça uma requisição AJAX
                 $.ajax({
                     type: "POST",
-                    url: "/Usuario/ExcluirUsuario", // Substitua "Usuario" pelo nome do seu controller
+                    url: "/Servico/ExcluirServico", // Substitua "Usuario" pelo nome do seu controller
                     data: { id: userId },
                     dataType: "json",
                     success: function (response) {
                         // A resposta do servidor está em response.success
                         if (response.success) {
                             // Feche o modal de exclusão
-                            $('#ExcluirUsuario').modal('hide');
+                            $('#ExcluirServico').modal('hide');
                             alert("Cliente excluido com sucesso!");
 
                             // Recarregue a página
                             location.reload();
                         } else {
-                            alert("Falha ao excluir usuário.");
+                            alert("Falha ao excluir Serviço.");
                         }
                     },
                     error: function () {
